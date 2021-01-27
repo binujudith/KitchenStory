@@ -1,0 +1,1046 @@
+﻿﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="Style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <script>
+        var cartinformation = 0;
+        function stickyMenu() {
+            var sticky = document.getElementById('sticky');
+            if (window.pageYOffset > 220) {
+                sticky.classList.add('sticky');
+            }
+            else {
+                sticky.classList.remove('sticky');
+            }
+        }
+
+        window.onscroll = function () {
+            stickyMenu();
+        }
+        function searchfunc() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            a = document.getElementsByClassName("dropdown-item");
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                console.log(1);
+                if (txtValue.toUpperCase().indexOf(filter) > -1 && filter.length != 0) {
+                    a[i].style.display = "block";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+        function AddtoCart(fooditem) {
+
+            var grams = 250;
+            var price;
+            //debugger;
+            if (cartinformation == "")
+                cartinformation = 1;
+            else
+                cartinformation = 1 + cartinformation;
+
+            if (fooditem == "Barbecue Chicken Pizza") {
+                var e = document.getElementById("selectbbqpizzasize");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹'+e.options[e.selectedIndex].value * 250;
+            }
+
+            else if (fooditem == "Oniun Capsicum Pizza") {
+                var e = document.getElementById("selectonionpizzasize");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹'+e.options[e.selectedIndex].value * 79;
+            }
+            else if (fooditem == "Spicy Chicken pizza") {
+                var e = document.getElementById("spicyChickenPizzaSize");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹'+e.options[e.selectedIndex].value * 200;
+            }
+            else if (fooditem == "Mac and Cheese Pizza") {
+                var e = document.getElementById("MacAndCheesePizzaSize");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹'+e.options[e.selectedIndex].value * 190;
+            }
+            else if (fooditem == "Corn and olive Pizza") {
+                var e = document.getElementById("CornandolivepizzaSize");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹'+e.options[e.selectedIndex].value * 167;
+            }
+            else if (fooditem == "Dragon Paneer Pizza") {
+                var e = document.getElementById("DragonPaneerPizzaSize");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹'+e.options[e.selectedIndex].value * 140;
+            }
+            else if (fooditem == "Chilli Paneer Pizza") {
+                var e = document.getElementById("ChilliPaneerPizzaSize");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹'+e.options[e.selectedIndex].value * 59;
+            }
+            else if (fooditem == "Black Forest Cake") {
+                var e = document.getElementById("cake1Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹'+e.options[e.selectedIndex].value * 360;
+            }
+            else if (fooditem == "Black Forest Cake") {
+                var e = document.getElementById("cake2Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹'+e.options[e.selectedIndex].value * 360;
+            }
+            else if (fooditem == "Nuts Cake") {
+                var e = document.getElementById("cake3Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹'+ e.options[e.selectedIndex].value * 500;
+            }
+            else if (fooditem == "Red Welvet Cake") {
+                var e = document.getElementById("cake_2Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹'+ e.options[e.selectedIndex].value * 360;
+            }
+            else if (fooditem == "Chocolate Cake") {
+                var e = document.getElementById("cake5Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹'+e.options[e.selectedIndex].value * 250;
+            }
+            else if (fooditem == "Blue Berry Cake") {
+                var e = document.getElementById("cake6Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹'+e.options[e.selectedIndex].value * 410;
+            }
+            else if (fooditem == "Butterscotch Cake") {
+                var e = document.getElementById("cake7Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹'+e.options[e.selectedIndex].value * 365;
+
+            }
+            else if (fooditem == "Choco Almond Cake") {
+                var e = document.getElementById("cake8Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹'+ e.options[e.selectedIndex].value * 500;
+            }
+            else if (fooditem == "Choco Truffle Cake") {
+                var e = document.getElementById("cake9Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹'+e.options[e.selectedIndex].value * 450;
+            }
+            else if (fooditem == "Mango Cake") {
+                var e = document.getElementById("cake10Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹'+e.options[e.selectedIndex].value * 370;
+            }
+            else if (fooditem == "Plum Cake") {
+                var e = document.getElementById("cake11Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹'+ e.options[e.selectedIndex].value * 380;
+            }
+            else if (fooditem == "White Forest Cake") {
+                var e = document.getElementById("cake12Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹'+e.options[e.selectedIndex].value * 385;
+            }
+            else if (fooditem == "Cheese Burger") {
+                var e = document.getElementById("burger1Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹' +e.options[e.selectedIndex].value * 39;
+            }
+            else if (fooditem == "McDonalds Burger") {
+                var e = document.getElementById("burger2Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹' +e.options[e.selectedIndex].value * 70;
+            }
+            else if (fooditem == "Burger with Mushroom sauce") {
+                var e = document.getElementById("burger3Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹' +e.options[e.selectedIndex].value * 56;
+            }
+            else if (fooditem == "Fish burger") {
+                var e = document.getElementById("burger4Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹' +e.options[e.selectedIndex].value * 80;
+            }
+            else if (fooditem == "Burger") {
+                var e = document.getElementById("burger5Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹' +e.options[e.selectedIndex].value * 45;
+            }
+            else if (fooditem == "Chicken Cheese Burst Burger") {
+                var e = document.getElementById("burger6Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹' +e.options[e.selectedIndex].value * 100;
+            }
+            else if (fooditem == "Classic Chicken Burger") {
+                var e = document.getElementById("burger7Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹' +e.options[e.selectedIndex].value *163;
+            }
+            else if (fooditem == "Classic Veg Burger") {
+                var e = document.getElementById("burger8Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹' +e.options[e.selectedIndex].value * 120;
+            }
+            else if (fooditem == "DB Grilled chicken Burger") {
+                var e = document.getElementById("burger9Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹' + e.options[e.selectedIndex].value * 234;
+            }
+            else if (fooditem == "Kiddy Veg Burger") {
+                var e = document.getElementById("burger10Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹' +e.options[e.selectedIndex].value * 56;
+            }
+            else if (fooditem == "Little Dia Burger") {
+                var e = document.getElementById("burger11Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹' +e.options[e.selectedIndex].value * 67;
+            }
+            else if (fooditem == "Paneer Cheese Burger") {
+                var e = document.getElementById("burger12Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹' + e.options[e.selectedIndex].value * 78;
+            }
+            else if (fooditem == "Super Twin Burger") {
+                var e = document.getElementById("burger13Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹' +e.options[e.selectedIndex].value *89;
+            }
+            else if (fooditem == "Tandoori Chicken Burger") {
+                var e = document.getElementById("burger14Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹' +e.options[e.selectedIndex].value * 145;
+            }
+            else if (fooditem == "Veg Twin Burger") {
+                var e = document.getElementById("burger15Size");
+                grams = e.options[e.selectedIndex].text;
+                price = '₹' + e.options[e.selectedIndex].value * 114;
+            }
+            var newdata = "";
+            var soupdetails = fooditem + "~" + grams + "~" + price;
+            var olddata = sessionStorage.getItem("Cartdetails");
+            if (olddata == null)
+                newdata = soupdetails;
+            else
+                newdata = olddata + ";" + soupdetails;
+
+            sessionStorage.setItem("Cartdetails", newdata);
+
+            document.getElementById('lblCartDetails').innerText = cartinformation;
+        }
+    </script>
+
+
+</head>
+<body>
+    <div class="parallax">
+        <div class="page-title">
+            Kitchen Story
+           <img src="Images/logo.jpg" id="logo"/>
+        </div>
+    </div>
+    <div class="menu" id="sticky">
+        <ul class="menu-ul">
+            <a href="#" class="a-menu"><li>Home</li></a>
+            <a href="#pizza" class="a-menu"><li>Pizza</li></a>
+            <a href="#cake" class="a-menu"><li>Cake</li></a>
+            <a href="#burger" class="a-menu"><li>Burger</li></a>
+            <a href="AddToCart.html" class="a-menu"><li>Cart</li></a>
+            <a href="Login.html" class="a-menu"><li>Login</li></a>
+            <a href="Register.html" class="a-menu"><li>Register</li></a>
+        </ul>
+        <div class="search-box" id="myDropdown">
+            <form>
+                <input type="text" placeholder="Search" name="search" class="search-input" id="myInput" onkeyup="searchfunc()" />
+
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <div class="dropdown-content">
+            <ul class="dropdown-list">
+                <li><a href="#pizza" class="dropdown-item">Barbecue Chicken Pizza</a></li>
+                <li><a href="#pizza" class="dropdown-item">Oniun Capsicum Pizza</a></li>
+                <li><a href="#pizza" class="dropdown-item">Spicy chicken pizza</a></li>
+                <li><a href="#pizza" class="dropdown-item">Mac And Cheese Pizza</a></li>
+                <li><a href="#pizza" class="dropdown-item">Corn And Olive Pizza</a></li>
+                <li><a href="#pizza" class="dropdown-item">Dragon Paneer Pizza</a></li>
+                <li><a href="#pizza" class="dropdown-item">Chilli Paneer Pizza</a></li>
+                <li><a href="#cake" class="dropdown-item">Black Forest cake</a></li>
+                <li><a href="#cake" class="dropdown-item">Nuts cake</a></li>
+                <li><a href="#cake" class="dropdown-item">Red Welvet cake</a></li>
+                <li><a href="#cake" class="dropdown-item">Chocolate Cake</a></li>
+                <li><a href="#cake" class="dropdown-item">Blue Berry Cake</a></li>
+                <li><a href="#cake" class="dropdown-item">Butterscotch Cake</a></li>
+                <li><a href="#cake" class="dropdown-item">Choco Almond Cake</a></li>
+                <li><a href="#cake" class="dropdown-item">Choco Truffle Cake</a></li>
+                <li><a href="#cake" class="dropdown-item">Mango Cake</a></li>
+                <li><a href="#cake" class="dropdown-item">Plum Cake</a></li>
+                <li><a href="#cake" class="dropdown-item">White Forest Cake</a></li>
+                <li><a href="#burger" class="dropdown-item">Cheese Burger</a></li>
+                <li><a href="#burger" class="dropdown-item">McDonald's Burger</a></li>
+                <li><a href="#burger" class="dropdown-item">Burger with Mushroom sauce</a></li>
+                <li><a href="#burger" class="dropdown-item">Fish burger</a></li>
+                <li><a href="#burger" class="dropdown-item">Burger</a></li>
+                <li><a href="#burger" class="dropdown-item">Chicken Cheese Burst Burger</a></li>
+                <li><a href="#burger" class="dropdown-item">Classic Chicken Burger</a></li>
+                <li><a href="#burger" class="dropdown-item">Classic Veg Burger</a></li>
+                <li><a href="#burger" class="dropdown-item">DB Grilled chicken Burger</a></li>
+                <li><a href="#burger" class="dropdown-item">Kiddy Veg Burger</a></li>
+                <li><a href="#burger" class="dropdown-item">Little Dia Burger</a></li>
+                <li><a href="#burger" class="dropdown-item">Paneer Cheese Burger</a></li>
+                <li><a href="#burger" class="dropdown-item">Super Twin Burger</a></li>
+                <li><a href="#burger" class="dropdown-item">Tandoori Chicken Burger</a></li>
+                <li><a href="#burger" class="dropdown-item">Veg Twin Burger</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--<div class="Top">
+        <div class="Top1">
+            <div class="Top2">
+                <div class="Top3">
+                    <div class="Top4" style>
+                        <div class="Top5" subtype="topCarouse1" style="margin-right:50px">
+                            <a href="#">
+                                <img src="Images/Kt1.jpg" width="260" height="260" class="img1" />
+                            </a>
+                        </div>
+                        <div class="Top5" subtype="topCarouse1" style="margin-right:50px">
+                            <a href="#">
+                                <img src="Images/Kt1.jpg" width="260" height="260" class="img1" />
+                            </a>
+                        </div>
+                        <div class="Top5" subtype="topCarouse1" style="margin-right:50px">
+                            <a href="#">
+                                <img src="Images/Kt1.jpg" width="260" height="260" class="img1" />
+                            </a>
+                        </div>
+                        <div class="Top5" subtype="topCarouse1" style="margin-right:50px">
+                            <a href="#">
+                                <img src="Images/Kt1.jpg" width="260" height="260" class="img1" />
+                            </a>
+                        </div>
+                        <div class="Top5" subtype="topCarouse1" style="margin-right:50px">
+                            <a href="#">
+                                <img src="Images/Kt1.jpg" width="260" height="260" class="img1" />
+                            </a>
+                        </div>
+                        <div class="Top5" subtype="topCarouse1" style="margin-right:50px">
+                            <a href="#">
+                                <img src="Images/Kt1.jpg" width="260" height="260" class="img1" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <button class="button">
+                    <i class="icon-back icon">
+                        ::before
+                    </i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div></div>
+    <div class="Top6"></div>-->
+    <div class="container">
+        <a href="#pizza">
+            <div class="container-categories">
+                <img src="Images/pizza1.jpg" class="item-image" />
+                <div class="image-title">Pizza</div>
+            </div>
+        </a>
+        <a href="#cake">
+            <div class="container-categories">
+                <img src="Images/cake6.jpg" class="item-image" />
+                <div class="image-title">Cake</div>
+            </div>
+        </a>
+        <a href="#burger">
+            <div class="container-categories">
+                <img src="Images/burger.jpg" class="item-image" />
+                <div class="image-title">burger</div>
+            </div>
+        </a>
+    </div>
+    <div class="deals-container" id="pizza">
+        <div class="parallax">
+            <div class="title">PIZZA</div>
+        </div>
+        <div class="items" id="Barbecue Chicken Pizza">
+            <div class="images">
+                <img src="Images/barbecueChickenPizza.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Barbecue Chicken Pizza</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr"></i>250/Piece
+                </div>
+                <label><b>Size:</b></label>
+                <select class="item-select" id="selectbbqpizzasize">
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                    <option value="4">Extra Large</option>
+                </select><br />
+                <button class="buynow-btn" onclick="AddtoCart('Barbecue Chicken Pizza')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items" id="Oniun Capsicum Pizza">
+            <div class="images">
+                <img src="Images/Oniumcapsigumpizza.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Oniun Capsicum Pizza</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr"></i>79/Piece
+                </div>
+                <label><b>Size:</b></label>
+                <select class="item-select" id="selectonionpizzasize">
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                    <option value="4">Extra Large</option>
+                </select><br />
+                         <button class="buynow-btn" onclick="AddtoCart('Oniun Capsicum Pizza')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items" id="Spicy Chicken pizza">
+            <div class="images">
+                <img src="Images/spicyChickenPizza.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Spicy Chicken pizza</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr"></i>200/Piece
+                </div>
+                <label><b>Size:</b></label>
+                <select class="item-select" id="spicyChickenPizzaSize">
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                    <option value="4">Extra Large</option>
+                </select><br />
+                         <button class="buynow-btn" onclick="AddtoCart('Spicy Chicken pizza')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items" id="Mac and Cheese Pizza">
+            <div class="images">
+                <img src="Images/MacAndCheesePizza.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Mac and Cheese Pizza</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr"></i>190/Piece
+                </div>
+                <label><b>Size:</b></label>
+                <select class="item-select" id="MacAndCheesePizzaSize">
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                    <option value="4">Extra Large</option>
+                </select><br />
+                         <button class="buynow-btn" onclick="AddtoCart('Mac and Cheese Pizza')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items" id="Corn and olive Pizza">
+            <div class="images">
+                <img src="Images/Corn and olive pizza.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Corn and olive Pizza</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr"></i>167/Piece
+                </div>
+                <label><b>Size:</b></label>
+                <select class="item-select" id="CornandolivepizzaSize">
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                    <option value="4">Extra Large</option>
+                </select><br />
+                         <button class="buynow-btn" onclick="AddtoCart('Corn and olive Pizza')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items" id="Dragon Paneer Pizza">
+            <div class="images">
+                <img src="Images/DragonPaneerPizza.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Dragon Paneer Pizza</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr"></i>140/Piece
+                </div>
+                <label><b>Size:</b></label>
+                <select class="item-select" id="DragonPaneerPizzaSize">
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                    <option value="4">Extra Large</option>
+                </select><br />
+                         <button class="buynow-btn" onclick="AddtoCart('Dragon Paneer Pizza')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items" id="Chilli Paneer Pizza">
+            <div class="images">
+                <img src="Images/ChilliPaneerPizza.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Chilli Paneer Pizza</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr"></i>59/Piece
+                </div>
+                <label><b>Size:</b></label>
+                <select class="item-select" id="ChilliPaneerPizzaSize">
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                    <option value="4">Extra Large</option>
+                </select><br />
+                         <button class="buynow-btn" onclick="AddtoCart('Chilli Paneer Pizza')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="deals-container" id="cake">
+        <div class="parallax">
+            <div class="title">CAKE</div>
+        </div>
+        <div class="items" id="Black Forest Cake">
+            <div class="images">
+                <img src="Images/cake1.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Black Forest Cake</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr"></i>360/Kg
+                </div>
+                <label><b>Qty:</b></label>
+                <select class="item-select" id="cake1Size">
+                    <option value="1">1 Kg</option>
+                    <option value="2">2 Kg</option>
+                    <option value="3">3 Kg</option>
+                    <option value="4">4 Kg</option>
+                </select><br />
+                         <button class="buynow-btn" onclick="AddtoCart('Black Forest Cake')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items" id="Black Forest Cake">
+            <div class="images">
+                <img src="Images/cake2.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Black Forest Cake</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr"></i>360/Kg
+                </div>
+                <label><b>Qty:</b></label>
+                <select class="item-select" id="cake2Size">
+                    <option value="1">1 Kg</option>
+                    <option value="2">2 Kg</option>
+                    <option value="3">3 Kg</option>
+                    <option value="4">4 Kg</option>
+                </select><br />
+                         <button class="buynow-btn"onclick="AddtoCart('Black Forest Cake')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items" id="Nuts Cake">
+            <div class="images">
+                <img src="Images/cake3.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Nuts Cake</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr"></i>500/Kg
+                </div>
+                <label><b>Qty:</b></label>
+                <select class="item-select" id="cake3Size">
+                    <option value="1">1 Kg</option>
+                    <option value="2">2 Kg</option>
+                    <option value="3">3 Kg</option>
+                    <option value="4">4 Kg</option>
+                </select><br />
+                         <button class="buynow-btn" onclick="AddtoCart('Nuts Cake')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items" id="Red Welvet Cake">
+            <div class="images">
+                <img src="Images/cake 2.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Red Welvet Cake</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr"></i>360/Kg
+                </div>
+                <label><b>Qty:</b></label>
+                <select class="item-select" id="cake_2Size">
+                    <option value="1">1 Kg</option>
+                    <option value="2">2 Kg</option>
+                    <option value="3">3 Kg</option>
+                    <option value="4">4 Kg</option>
+                </select><br />
+                         <button class="buynow-btn" onclick="AddtoCart('Red Welvet Cake')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items" id="Chocolate Cake">
+            <div class="images">
+                <img src="Images/cake5.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Chocolate Cake</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr"></i>250/Kg
+                </div>
+                <label><b>Qty:</b></label>
+                <select class="item-select" id="cake5Size">
+                    <option value="1">1 Kg</option>
+                    <option value="2">2 Kg</option>
+                    <option value="3">3 Kg</option>
+                    <option value="4">4 Kg</option>
+                </select><br />
+                         <button class="buynow-btn" onclick="AddtoCart('Chocolate Cake')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items"id="Blue Berry Cake">
+            <div class="images">
+                <img src="Images/blueberrycake.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Blue Berry Cake</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr"></i>410/Kg
+                </div>
+                <label><b>Qty:</b></label>
+                <select class="item-select" id="cake6Size">
+                    <option value="1">1 Kg</option>
+                    <option value="2">2 Kg</option>
+                    <option value="3">3 Kg</option>
+                    <option value="4">4 Kg</option>
+                </select><br />
+                         <button class="buynow-btn" onclick="AddtoCart('Blue Berry Cake')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items" id="Butterscotch Cake">
+            <div class="images">
+                <img src="Images/butterscotchcake.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Butterscotch Cake</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr"></i>365/Kg
+                </div>
+                <label><b>Qty:</b></label>
+                <select class="item-select" id="cake7Size">
+                    <option value="1">1 Kg</option>
+                    <option value="2">2 Kg</option>
+                    <option value="3">3 Kg</option>
+                    <option value="4">4 Kg</option>
+                </select><br />
+                         <button class="buynow-btn"onclick="AddtoCart('Butterscotch Cake')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items"id="Choco Almond Cake">
+            <div class="images">
+                <img src="Images/chocoalmondcake.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Choco Almond Cake</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr"></i>500/Kg
+                </div>
+                <label><b>Qty:</b></label>
+                <select class="item-select" id="cake8Size">
+                    <option value="1">1 Kg</option>
+                    <option value="2">2 Kg</option>
+                    <option value="3">3 Kg</option>
+                    <option value="4">4 Kg</option>
+                </select><br />
+                         <button class="buynow-btn"onclick="AddtoCart('Choco Almond Cake')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items"id="Choco Truffle Cake">
+            <div class="images">
+                <img src="Images/chocoTruffle.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Choco Truffle Cake</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr"></i>450/Kg
+                </div>
+                <label><b>Qty:</b></label>
+                <select class="item-select" id="cake9Size">
+                    <option value="1">1 Kg</option>
+                    <option value="2">2 Kg</option>
+                    <option value="3">3 Kg</option>
+                    <option value="4">4 Kg</option>
+                </select><br />
+                         <button class="buynow-btn"onclick="AddtoCart('Choco Truffle Cake')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+
+        <div class="items"id="Mango Cake">
+            <div class="images">
+                <img src="Images/mangocake.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Mango Cake</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr"></i>370/Kg
+                </div>
+                <label><b>Qty:</b></label>
+                <select class="item-select" id="cake10Size">
+                    <option>1 Kg</option>
+                    <option>2 Kg</option>
+                    <option>3 Kg</option>
+                    <option>4 Kg</option>
+                </select><br />
+                         <button class="buynow-btn"onclick="AddtoCart('Mango Cake')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items"id="Plum Cake">
+            <div class="images">
+                <img src="Images/plumcake.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Plum Cake</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr"></i>380/Kg
+                </div>
+                <label><b>Qty:</b></label>
+                <select class="item-select" id="cake11Size">
+                    <option value="1">1 Kg</option>
+                    <option value="2">2 Kg</option>
+                    <option value="3">3 Kg</option>
+                    <option value="4">4 Kg</option>
+                </select><br />
+                         <button class="buynow-btn"onclick="AddtoCart('Plum Cake')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items"id="White Forest Cake">
+            <div class="images">
+                <img src="Images/whiteforestcake.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>White Forest Cake</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr"></i>385/Kg
+                </div>
+                <label><b>Qty:</b></label>
+                <select class="item-select" id="cake12Size">
+                    <option value="1">1 Kg</option>
+                    <option value="2">2 Kg</option>
+                    <option value="3">3 Kg</option>
+                    <option value="4">4 Kg</option>
+                </select><br />
+                         <button class="buynow-btn"onclick="AddtoCart('White Forest Cake')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="deals-container" id="burger">
+        <div class="parallax">
+            <div class="title">BURGER</div>
+        </div>
+        <div class="items" id="Cheese Burger">
+            <div class="images">
+                <img src="Images/cheeseBurger.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Cheese Burger</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr">39</i>
+                </div>
+                <label><b>Qty</b></label>
+                <select class="item-select" id="burger1Size">
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                </select><br />
+                         <button class="buynow-btn" onclick="AddtoCart('Cheese Burger')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items"id="McDonald's Burger">
+            <div class="images">
+                <img src="Images/McDonald'sBurger.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>McDonald's Burger</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr">70</i>
+                </div>
+                <label><b>Qty</b></label>
+                <select class="item-select" id="burger2Size">
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                </select><br />
+                         <button class="buynow-btn"onclick="AddtoCart('McDonalds Burger')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items"id="Burger with Mushroom sauce">
+            <div class="images">
+                <img src="Images/burger1.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Burger with Mushroom sauce</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr">56</i>
+                </div>
+                <label><b>Qty</b></label>
+                <select class="item-select"id="burger3Size">
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                </select><br />
+                         <button class="buynow-btn"onclick="AddtoCart('Burger with Mushroom sauce')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items"id="Fish burger">
+            <div class="images">
+                <img src="Images/burger2.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Fish burger</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr">80</i>
+                </div>
+                <label><b>Qty</b></label>
+                <select class="item-select"id="burger4Size">
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                </select><br />
+                         <button class="buynow-btn"onclick="AddtoCart('Fish burger')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items"id="Burger">
+            <div class="images">
+                <img src="Images/burger3.jpg" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Burger</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr">45</i>
+                </div>
+                <label><b>Qty</b></label>
+                <select class="item-select"id="burger5Size">
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                </select><br />
+                         <button class="buynow-btn"onclick="AddtoCart('Burger')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items"id="Chicken Cheese Burst Burger">
+            <div class="images">
+                <img src="Images/Chicken_Cheese_Burst_Burger.png" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Chicken Cheese Burst Burger</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr">100</i>
+                </div>
+                <label><b>Qty</b></label>
+                <select class="item-select"id="burger6Size">
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                </select><br />
+                         <button class="buynow-btn"onclick="AddtoCart('Chicken Cheese Burst Burger')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items"id="Classic Chicken Burger">
+            <div class="images">
+                <img src="Images/Classic_Chicken_Burger.png" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Classic Chicken Burger</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr">163</i>
+                </div>
+                <label><b>Qty</b></label>
+                <select class="item-select"id="burger7Size">
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                </select><br />
+                         <button class="buynow-btn"onclick="AddtoCart('Classic Chicken Burger')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items"id="Classic Veg Burger">
+            <div class="images">
+                <img src="Images/Classic_Veg_Burger.png" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Classic Veg Burger</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr">120</i>
+                </div>
+                <label><b>Qty</b></label>
+                <select class="item-select"id="burger8Size">
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                </select><br />
+                         <button class="buynow-btn"onclick="AddtoCart('Classic Veg Burger')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items"id="DB Grilled chicken Burger">
+            <div class="images">
+                <img src="Images/DB_Grilled_chicken_Burger.png" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>DB Grilled chicken Burger</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr">234</i>
+                </div>
+                <label><b>Qty</b></label>
+                <select class="item-select"id="burger9Size">
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                </select><br />
+                         <button class="buynow-btn"onclick="AddtoCart('DB Grilled chicken Burger')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items"id="Kiddy Veg Burger">
+            <div class="images">
+                <img src="Images/Kiddy_Veg_Burger.png" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Kiddy Veg Burger</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr">56</i>
+                </div>
+                <label><b>Qty</b></label>
+                <select class="item-select"id="burger10Size">
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                </select><br />
+                         <button class="buynow-btn"onclick="AddtoCart('Kiddy Veg Burger')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items"id="Little Dia Burger">
+            <div class="images">
+                <img src="Images/Little_Dia_Burger.png" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Little Dia Burger</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr">67</i>
+                </div>
+                <label><b>Qty</b></label>
+                <select class="item-select"id="burger11Size">
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                </select><br />
+                         <button class="buynow-btn"onclick="AddtoCart('Little Dia Burger')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items"id="Paneer Cheese Burger">
+            <div class="images">
+                <img src="Images/Paneer_Cheese_Burger.png" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Paneer Cheese Burger</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr">78</i>
+                </div>
+                <label><b>Qty</b></label>
+                <select class="item-select"id="burger12Size">
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                </select><br />
+                         <button class="buynow-btn"onclick="AddtoCart('Paneer Cheese Burger')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items"id="Super Twin Burger">
+            <div class="images">
+                <img src="Images/Super_Twin_Burger.png" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Super Twin Burger</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr">89</i>
+                </div>
+                <label><b>Qty</b></label>
+                <select class="item-select"id="burger13Size">
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                </select><br />
+                         <button class="buynow-btn"onclick="AddtoCart('Super Twin Burger')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items"id="Tandoori Chicken Burger">
+            <div class="images">
+                <img src="Images/Tandoori_Chicken_Burger.png" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Tandoori Chicken Burger</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr">145</i>
+                </div>
+                <label><b>Qty</b></label>
+                <select class="item-select"id="burger14Size">
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                </select><br />
+                         <button class="buynow-btn"onclick="AddtoCart('Tandoori Chicken Burger')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <div class="items"id="Veg Twin Burger">
+            <div class="images">
+                <img src="Images/Veg_Twin_Burger.png" class="item-image-size" />
+            </div>
+            <div class="description">
+                <b>Veg Twin Burger</b><br />
+                <div class="item-select">
+                    <b>Price</b> :<i class="fa fa-inr">114</i>
+                </div>
+                <label><b>Qty</b></label>
+                <select class="item-select"id="burger15">
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                </select><br />
+                         <button class="buynow-btn"onclick="AddtoCart('Veg Twin Burger')">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-bar">
+            <section class="footer-sec">
+                <img src="Images/kitchenStory.png" alt="KitchenStory logo" height="90px" class="footer-img" />
+                <div class="stickyicon-list">
+                    <a href="#facebook" class="facebook">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a href="#twitter" class="twitter">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="#linkedin" class="linkedin">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                    <a href="#google" class="google">
+                        <i class="fa fa-google"></i>
+                    </a>
+                    <a href="#instagram" class="instagram">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                    <a href="#youtube" class="youtube">
+                        <i class="fa fa-youtube"></i>
+                    </a>
+                </div>
+
+            </section>
+        </div>
+    </footer>
+
+</body>
+</html>
